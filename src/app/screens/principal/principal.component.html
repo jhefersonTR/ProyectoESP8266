@@ -1,0 +1,150 @@
+<div class="divmodulo">
+
+    <nav class="Titulo">
+        <img class="logotwo" src="../../../assets/images/logo.jpg">
+        <li class=" titulo fontPaci fontzize24px  ">
+            PROYECTO DE PLACA ESP8266 CON BASE DE DATOS
+        </li>
+        <img class="logo" src="../../../assets/images/descarga.png">
+
+
+
+
+    </nav>
+
+    <nav class="navbar">
+        <li class="fontPaci  fontzize24px" (click)="Proyecto()">
+            <i class="fas fa-address-book"></i>
+            <span>Proyecto</span>
+        </li>
+        <li class="fontPaci fontzize24px" (click)="Actual() ">
+            <i class="fas fa-clock pt-1"></i>
+            Vista actual
+        </li>
+
+        <li class="fontPaci fontzize24px" (click)="Records()"> 
+            <i class="fas fa-file-medical-alt pt-1"></i>
+            Records
+        </li>
+
+    </nav>
+    <div class="total fontPaci">
+
+        <div *ngIf="position==1" [ngTemplateOutlet]="paso1"></div>
+        <div *ngIf="position==2" [ngTemplateOutlet]="paso2"></div>
+        <div *ngIf="position==3" [ngTemplateOutlet]="paso3"></div>
+
+    </div>
+
+        <ng-template #paso1>
+            <div class="proyecto">
+                <p class ="texto fontPaci ">Este es un pequeño programa desarollador por mi, y se pidió poder conectar la placa ESP8266 a cualquier sensor y poder obtener la data, luego mostrarlo o directamente estudiarlo , en este trabajo se muestra la temperatura y humedad actual del ambiente, primeramente ah sido construido en un protoboard alimentado por un cable USB de la laptop ,  después este fue programado mediante “Arduino” con adaptación para esta placa , después se creo la pi POST  con lenguaje de programación PHP , para así poder conectar el Arduino con una base de datos y ser leída desde el fronted que ene este caso se usó ANGULAR , si bien es un proyecto pequeño, este mismo tiene posibilidades abundantes para el tema de control de además que se viene tocando temas de IOT. </p>
+                
+               <img class="logotres " src="../../../assets/images/1.jpg">
+            </div>
+        </ng-template>
+        <ng-template #paso2>
+            <div class="vista">
+                <div class="hora">
+                    <div class="dia">
+                    <p> 
+                        {{dia}}
+                    </p>
+                    </div>
+                    <p class="dospuntos">
+                        /
+                    </p>
+                    <div class="hora1">
+                        <p>
+                        {{hora1}}
+                    </p>
+                    </div>
+                    <p class="dospuntos">
+                        :
+                    </p>
+                    
+                    <div class="hora1">
+                        <p>
+                            {{hora2}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="data fontPaci">
+                    <div class="humedad">
+                        <div class="caja">
+                            <i class="fas fa-water pt-1"></i>
+                            <span>
+                                HUMEDAD
+                            </span>
+                        </div>
+                        <p>{{humidity}}°</p>
+                    </div>
+                    <div class="temperatura">
+                        <div class="caja">
+                            <i class="fas fa-thermometer-three-quarters pt-1"></i>
+                            <span>
+                                TEMPERATURA
+                            </span>
+                            
+                        </div>
+                        <p>{{temperatura}}°</p>
+                    </div>
+                </div>
+               
+
+
+            </div>
+        </ng-template>
+        <ng-template #paso3>
+            <div class="records">
+                <p> REGISTROS ALTOS</p>
+                <table class="table table-striped">
+                    <thead>
+                      <tr class="table-primary"> 
+                        <th scope="col">#</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Humedad</th>
+                        <th scope="col">Temperatura</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-danger" >
+                        <th scope="row">1</th>
+                        <td>1375</td>
+                        <td>94°</td>
+                        <td>21.50°</td>
+                      </tr>
+                      <tr class="table-danger" >
+                        <th scope="row">2</th>
+                        <td>1520</td>
+                        <td>97°</td>
+                        <td>21.40°</td>
+                      </tr>
+                      <tr class="table-danger" >
+                        <th scope="row">3</th>
+                        <td>1820</td>
+                        <td>99°</td>
+                        <td>20.10°</td>
+                      </tr>
+                      <tr class="table-danger" >
+                        <th scope="row">4</th>
+                        <td>1920</td>
+                        <td>97°</td>
+                        <td>
+                            21.50°</td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+            </div>
+        </ng-template>
+
+
+
+ 
+
+
+
+
+</div>
